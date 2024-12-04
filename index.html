@@ -14,17 +14,24 @@
         </div>
         <div id="darkLightMotiveDiv" class="headerElement">
             <button class="colorMode" id="lightMode">☀️</button>
-            <button class="colorMode" id="darkMode">🌙</button>
+            <button class="colorMode" id="darkMode" onclick="darkMode()">🌙</button>
         </div>
     </header>
 
     <main>
+        <h2 id="searchText">Search for weather in any city you want!</h2>
         <div id="weatherCard">
-            <input type="text">
-            <p>temp</p>
-            <p>humidity</p>
-            <p>weather</p>
-            <p>error</p>
+            <div id="searchBar">
+                <input id="cityInput" placeholder="Enter a city" type="text">
+                <button id="searchBtn">Search</button>
+            </div>
+            <p class="weatherInfo" id="city"></p>
+            <p class="weatherInfo" id="time"></p>
+            <p class="weatherInfo" id="temp"></p>
+            <p class="weatherInfo" id="humidity"></p>
+            <p class="weatherInfo" id="weather"></p>
+            <p class="weatherInfo" id="emoji"></p>
+            <p id="errorMessage"></p>
         </div>
     </main>
     

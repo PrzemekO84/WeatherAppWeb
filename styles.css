@@ -67,10 +67,68 @@ main{
     flex-direction: column;
     align-items: center;
     margin-top: 50px;
+    justify-content: center;
+    text-align: center;
+}
+
+#searchText{
+    font-size: 35px;
+    margin-top: -10px;
 }
 
 #weatherCard{
-    border: 2px solid white;
+    border: 2px solid black;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px black;
+    width: 35%;
+    padding: 20px;
+    background-color: hsl(210, 12%, 20%);
+}
+
+#weatherCard input{
+    font-size: 30px;
+    border-radius: 15px;
+    background-color: hsl(0, 0%, 90%);
+    padding: 5px;
+    text-align: center;
+    border: 1px solid black;
+    box-shadow: 2px 2px 5px black;
+}
+
+#weatherCard p{
+    font-size: 25px;
+}
+
+#searchBar{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+}
+
+#searchBtn{
+    font-size: 30px;
+    border-radius: 15px;
+    background-color: hsl(0, 0%, 90%);
+    padding: 5px;
+    margin-left: 3px;
+    border: 1px solid black;
+    box-shadow: 2px 2px 5px black;
+    cursor: pointer;
+}
+
+#searchBtn:active{
+    background-color: hsl(0, 0%, 100%);
+}
+
+.weatherInfo{
+    display: none;
+}
+
+#errorMessage{
+    display: none;
+    font-size: 25px;
 }
 
 /* Main */
