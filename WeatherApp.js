@@ -8,11 +8,7 @@ function displayError(city){
         element.style.display = "none";
     });
 
-    console.log(city);
-
     errorMessage.style.display = "block"
-
-    console.log("co sie dzieje mordo :(");
 
     if(city === ""){
         errorMessage.textContent = "Please enter a city"
@@ -34,15 +30,8 @@ async function fetchWeather(city){
         displayError(city);
     }
     else{
-        console.log("XDDDDD");
 
         const responseJson = await response.json()
-
-        console.log(response);
-    
-        console.log(responseJson);
-    
-        console.log(`response name: ${responseJson.name}`);
     
         updateCard(responseJson);
     }
@@ -56,9 +45,7 @@ function updateCard(fetchedData){
         element.style.display = "block";
     });
 
-    //errorMessage.style.display = "none";
-
-    console.log(`updateCard name ${fetchedData.name}`);
+    errorMessage.style.display = "none";
     
     const city = document.getElementById("city");
     const time = document.getElementById("time");
@@ -80,8 +67,6 @@ function updateCard(fetchedData){
 }
 
 function getWeatherEmoji(emojiID){
-
-    console.log(emojiID);
 
     switch(true){
         case(emojiID >= 200 && emojiID < 300):
@@ -123,9 +108,6 @@ function getTime(timeZone){
     const paddedHour = hour.toString().padStart(2, 0);
     const paddedMinutes = minutes.toString().padStart(2, 0);
 
-    console.log(localTimeZone);
-    console.log(hour);
-
     if(hour + localTimeZone > 24){
 
         const timeDifference = 24 - hour;
@@ -136,11 +118,6 @@ function getTime(timeZone){
 
     }
     else if(hour + localTimeZone < 0){
-
-        // 02:55
-        // hour = 2
-        // gmt = -5
-        // 24 - 3 
 
         const timeDifference = hour - localTimeZone;
         const newTime = 24 - timeDifference;
@@ -173,11 +150,9 @@ cityInput.addEventListener("keydown", async event =>{
     if(event.key === "Enter"){
         if(city){
             try{
-                console.log("elooooo!");
 
-                const weatherInfo = await fetchWeather(city);
+                await fetchWeather(city);
 
-                updateCard(weatherInfo);
                 
             }
             catch(error){
